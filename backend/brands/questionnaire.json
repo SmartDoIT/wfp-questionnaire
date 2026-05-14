@@ -1,0 +1,290 @@
+{
+  "version": "1.0",
+  "title": "AI-Enabled Healthcare Workforce Planning Readiness Assessment",
+  "intro": "This short diagnostic assesses your organization's current workforce planning maturity across six readiness areas. Answer honestly — there are no right or wrong answers. You'll receive a personalized maturity score, a domain-level breakdown, and tailored next steps via email.",
+  "contactFields": [
+    { "id": "firstName", "label": "First name", "type": "text", "required": true },
+    { "id": "lastName", "label": "Last name", "type": "text", "required": true },
+    { "id": "email", "label": "Work email", "type": "email", "required": true },
+    { "id": "company", "label": "Organization", "type": "text", "required": true },
+    { "id": "role", "label": "Your role", "type": "text", "required": true },
+    { "id": "phone", "label": "Phone (optional)", "type": "tel", "required": false }
+  ],
+  "scales": {
+    "likert": {
+      "options": [
+        { "value": 1, "label": "Not at all" },
+        { "value": 2, "label": "Slightly" },
+        { "value": 3, "label": "Somewhat" },
+        { "value": 4, "label": "Largely" },
+        { "value": 5, "label": "Fully" }
+      ]
+    },
+    "yes-no-partial": {
+      "options": [
+        { "value": "no", "label": "No" },
+        { "value": "partial", "label": "Partially" },
+        { "value": "yes", "label": "Yes" }
+      ]
+    }
+  },
+  "domains": [
+    {
+      "id": "process",
+      "name": "Workforce Planning Process",
+      "description": "How the organization currently plans staff capacity, shifts, on-call duties, clinical coverage, absences, overtime and schedule changes.",
+      "weight": 1.0,
+      "questions": [
+        {
+          "id": "process.standardized",
+          "text": "Our workforce planning process is standardized and applied consistently across departments.",
+          "type": "likert"
+        },
+        {
+          "id": "process.cadence",
+          "text": "Is the workforce plan reviewed and updated on a regular, defined cadence?",
+          "type": "yes-no-partial"
+        },
+        {
+          "id": "process.demand-to-staffing",
+          "text": "How well are patient demand and staffing requirements connected in your current planning?",
+          "type": "weighted-likert",
+          "weight": 2.0,
+          "note": "Key readiness question for this domain."
+        },
+        {
+          "id": "process.change-handling",
+          "text": "How effectively are schedule changes (last-minute swaps, absences, escalations) handled?",
+          "type": "likert"
+        },
+        {
+          "id": "process.system-supported",
+          "text": "Is workforce planning primarily system-supported, as opposed to manual / Excel-based?",
+          "type": "yes-no-partial"
+        }
+      ]
+    },
+    {
+      "id": "demand",
+      "name": "Demand & Workload Planning",
+      "description": "How patient demand drivers (appointments, procedures, lab samples, peaks, no-shows, seasonality) are translated into required workforce capacity.",
+      "weight": 1.0,
+      "questions": [
+        {
+          "id": "demand.translation-logic",
+          "text": "How clearly does your organization translate patient demand into required staffing capacity?",
+          "type": "weighted-likert",
+          "weight": 2.0,
+          "note": "Key readiness question for this domain."
+        },
+        {
+          "id": "demand.drivers-forecast",
+          "text": "Do you forecast demand drivers (appointments, procedures, lab/diagnostic volumes) systematically?",
+          "type": "yes-no-partial"
+        },
+        {
+          "id": "demand.peaks-and-urgent",
+          "text": "How well does planning account for peak periods, urgent cases, and no-shows / cancellations?",
+          "type": "likert"
+        },
+        {
+          "id": "demand.standard-durations",
+          "text": "How accurately are standard durations defined for examinations, procedures and other activities?",
+          "type": "likert"
+        },
+        {
+          "id": "demand.seasonality",
+          "text": "Are seasonal patterns reflected in workforce demand forecasts?",
+          "type": "yes-no-partial"
+        }
+      ]
+    },
+    {
+      "id": "capacity",
+      "name": "Staff Capacity & Availability",
+      "description": "Visibility into real effective capacity — not just headcount — including working hours, absences, training, part-time, shift patterns and role-specific availability.",
+      "weight": 1.0,
+      "questions": [
+        {
+          "id": "capacity.effective-visibility",
+          "text": "Does management know how much effective capacity is actually available by day, shift, role, location and department?",
+          "type": "weighted-likert",
+          "weight": 2.0,
+          "note": "Key readiness question for this domain."
+        },
+        {
+          "id": "capacity.availability-data",
+          "text": "Is employee availability data (vacations, sick leave, training, part-time) reliable and up-to-date?",
+          "type": "yes-no-partial"
+        },
+        {
+          "id": "capacity.shift-and-role",
+          "text": "How well do you track shift patterns, location constraints and role-specific availability?",
+          "type": "likert"
+        },
+        {
+          "id": "capacity.overtime-visibility",
+          "text": "Is overtime tracked and visible in close-to-real time?",
+          "type": "yes-no-partial"
+        },
+        {
+          "id": "capacity.effective-hours",
+          "text": "How accurate is your view of effective working hours (vs. nominal contracted hours)?",
+          "type": "likert"
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "name": "Skills, Certifications & Clinical Coverage",
+      "description": "Whether the right people with the right qualifications, certifications and seniority are available for each shift — not just enough headcount.",
+      "weight": 1.0,
+      "questions": [
+        {
+          "id": "skills.coverage-visibility",
+          "text": "Can the organization clearly identify whether each shift has the required clinical skill coverage?",
+          "type": "weighted-likert",
+          "weight": 2.0,
+          "note": "Key readiness question for this domain."
+        },
+        {
+          "id": "skills.matrix-current",
+          "text": "Do you maintain an up-to-date skill and certification matrix for clinical staff?",
+          "type": "yes-no-partial"
+        },
+        {
+          "id": "skills.license-tracking",
+          "text": "How well do you track license validity and certification expirations?",
+          "type": "likert"
+        },
+        {
+          "id": "skills.key-person-risk",
+          "text": "How low is your dependency on a small number of critical individuals for key skills? (5 = very low dependency, 1 = high single-point-of-failure risk)",
+          "type": "likert"
+        },
+        {
+          "id": "skills.supervision-rules",
+          "text": "Are supervision requirements (junior/senior pairing) clearly defined and enforced?",
+          "type": "yes-no-partial"
+        }
+      ]
+    },
+    {
+      "id": "rules",
+      "name": "Planning Rules & Governance",
+      "description": "Clarity and codification of planning rules — minimum staffing, ratios, rest, overtime limits, on-call rules, escalation — and clear ownership of planning, data and skill matrix updates.",
+      "weight": 1.0,
+      "questions": [
+        {
+          "id": "rules.codifiable",
+          "text": "Are your planning rules clear enough to be translated into a digital rule engine?",
+          "type": "weighted-likert",
+          "weight": 2.0,
+          "note": "Key readiness question for this domain."
+        },
+        {
+          "id": "rules.staffing-ratios",
+          "text": "Are minimum staffing requirements and patient-to-staff ratios formally documented?",
+          "type": "yes-no-partial"
+        },
+        {
+          "id": "rules.overtime-rest",
+          "text": "How consistently are overtime limits and minimum rest-time rules applied across the organization?",
+          "type": "likert"
+        },
+        {
+          "id": "rules.ownership",
+          "text": "Is ownership of workforce planning, data quality and skill-matrix updates clearly assigned?",
+          "type": "yes-no-partial"
+        },
+        {
+          "id": "rules.improvement-rhythm",
+          "text": "How mature is your continuous-improvement rhythm for planning rules and governance?",
+          "type": "likert"
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "name": "Systems & Data Landscape",
+      "description": "Whether HR, payroll, time-and-attendance, scheduling, HIS, appointment and lab systems are available, accurate, structured and sufficiently connected to support an AI planning tool.",
+      "weight": 1.0,
+      "questions": [
+        {
+          "id": "systems.data-ready",
+          "text": "Are the required data sources available, accurate, structured and sufficiently connected to support an AI workforce planning tool?",
+          "type": "weighted-likert",
+          "weight": 2.0,
+          "note": "Key readiness question for this domain."
+        },
+        {
+          "id": "systems.integration",
+          "text": "Do your HR, payroll, time-and-attendance and scheduling systems exchange data automatically?",
+          "type": "yes-no-partial"
+        },
+        {
+          "id": "systems.consolidation",
+          "text": "How well is workforce data consolidated, as opposed to spread across Excel files and local trackers?",
+          "type": "likert"
+        },
+        {
+          "id": "systems.data-quality",
+          "text": "How would you rate the overall data quality (completeness, accuracy, timeliness) of your workforce data?",
+          "type": "likert"
+        },
+        {
+          "id": "systems.dashboard",
+          "text": "Is there a dashboard or single source of truth where management can see current capacity and risks?",
+          "type": "yes-no-partial"
+        }
+      ]
+    }
+  ],
+  "maturityLevels": [
+    {
+      "id": "reactive",
+      "name": "Reactive",
+      "min": 1.0,
+      "max": 1.8,
+      "headline": "Workforce planning is largely manual and reactive.",
+      "description": "Capacity, skill and rule risks are mostly identified after operational problems occur. There is significant opportunity to build planning discipline before any AI investment.",
+      "recommendation": "Start with quick wins: standardize Excel templates, clean availability data, update the skill matrix and document critical planning rules."
+    },
+    {
+      "id": "emerging",
+      "name": "Emerging",
+      "min": 1.8,
+      "max": 2.6,
+      "headline": "Some planning practices are in place but inconsistent.",
+      "description": "Planning differs by department, data lives in disconnected files, and rules are known informally. Foundational improvements are required before scaling.",
+      "recommendation": "Define a TO-BE workforce planning process, establish data ownership and create a planning rule catalogue."
+    },
+    {
+      "id": "defined",
+      "name": "Defined",
+      "min": 2.6,
+      "max": 3.4,
+      "headline": "Planning processes are defined but not yet AI-ready.",
+      "description": "You have a workable planning rhythm, but data fragmentation, rule gaps or governance ambiguity will limit AI value.",
+      "recommendation": "Tighten data quality, codify rules into mandatory vs. preferred categories, and pilot a demand-to-capacity calculation model."
+    },
+    {
+      "id": "managed",
+      "name": "Managed",
+      "min": 3.4,
+      "max": 4.2,
+      "headline": "Mature planning with clear governance — ready for AI augmentation.",
+      "description": "Your processes, data and rules are largely in place. You are well-positioned to pilot the AI Workforce Planning Scenario & Gap Analyzer on a focused department.",
+      "recommendation": "Define MVP scope, select a pilot department (radiology, lab, outpatient, diagnostic centre), and validate rules with management before build."
+    },
+    {
+      "id": "ai-enabled",
+      "name": "AI-Enabled",
+      "min": 4.2,
+      "max": 5.01,
+      "headline": "High-maturity, data-driven planning. Ready to deploy.",
+      "description": "You have the operational discipline, data foundations and governance to deploy and scale an AI-enabled scenario and gap analyzer with high confidence.",
+      "recommendation": "Move to full implementation: data preparation, rule-engine configuration, scenario logic and pilot validation across a target department."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(npm install *)",
+      "Bash(node server.js)",
+      "Bash(curl -s http://localhost:4000/api/health)",
+      "Bash(curl -s http://localhost:4000/api/brands/orgaccelerator)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4000/api/brands/doesnotexist)",
+      "Bash(curl -s -X POST http://localhost:4000/api/health)",
+      "Bash(kill %1)",
+      "Bash(wait)",
+      "Bash(curl -s -X POST http://localhost:4000/api/submit/orgaccelerator -H \"Content-Type: application/json\" -d '{\"contact\":{\"firstName\":\"Test\",\"lastName\":\"Lead\",\"email\":\"tsweeyo@gmail.com\",\"company\":\"SmokeTest\",\"role\":\"Director\"},\"answers\":{\"process.standardized\":4,\"process.cadence\":\"yes\",\"process.demand-to-staffing\":3,\"process.change-handling\":3,\"process.system-supported\":\"partial\",\"demand.translation-logic\":3,\"demand.drivers-forecast\":\"yes\",\"demand.peaks-and-urgent\":4,\"demand.standard-durations\":3,\"demand.seasonality\":\"partial\",\"capacity.effective-visibility\":3,\"capacity.availability-data\":\"partial\",\"capacity.shift-and-role\":3,\"capacity.overtime-visibility\":\"yes\",\"capacity.effective-hours\":3,\"skills.coverage-visibility\":4,\"skills.matrix-current\":\"yes\",\"skills.license-tracking\":4,\"skills.key-person-risk\":3,\"skills.supervision-rules\":\"yes\",\"rules.codifiable\":3,\"rules.staffing-ratios\":\"yes\",\"rules.overtime-rest\":4,\"rules.ownership\":\"partial\",\"rules.improvement-rhythm\":3,\"systems.data-ready\":2,\"systems.integration\":\"no\",\"systems.consolidation\":2,\"systems.data-quality\":3,\"systems.dashboard\":\"no\"}}' -o /dev/null -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(npx vite *)",
+      "PowerShell(Get-Process node -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(\"done\")"
+    ]
+  }
+}
