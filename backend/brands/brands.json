@@ -2,14 +2,14 @@
   "c42services": {
     "id": "c42services",
     "name": "C42 Services",
-    "tagline": "PLACEHOLDER — replace with C42 tagline",
+    "tagline": "AI First, Human always",
     "primaryColor": "#1e3a8a",
     "accentColor": "#3b82f6",
     "backgroundColor": "#f8fafc",
     "logoUrl": "",
     "website": "https://c42services.com",
-    "contactEmail": "PLACEHOLDER@c42services.com",
-    "salesEmail": "leads@wfp.smartdoit.com",
+    "contactEmail": "info@c42services.com",
+    "salesEmail": "vladimir@cvijanovic.eu",
     "emailFromName": "C42 Services",
     "emailSubject": "Your Healthcare Workforce Planning Readiness Results"
   },
@@ -23,8 +23,8 @@
     "logoUrl": "",
     "website": "https://organizationaccelerator.com",
     "contactEmail": "ivan.stefanovic@organizationaccelerator.com",
-    "salesEmail": "leads@wfp.smartdoit.com",
+    "salesEmail": "vladimir@cvijanovic.eu",
     "emailFromName": "Organization Accelerator",
-    "emailSubject": "Your AI-Enabled Workforce Planning Readiness Results"
+    "emailSubject": "Your Healthcare Workforce Planning Readiness Results"
   }
 }
